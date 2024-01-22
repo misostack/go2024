@@ -2,13 +2,13 @@ package main
 
 import "fmt"
 
-func print_board(boards map[int]string){
+func print_board(boards map[int]string) {
 	fmt.Println(boards)
 }
 
-func learning_variables(){
+func learning_variables() {
 	fmt.Println("Variables")
-	
+
 	var tada, _ = "okie", false
 	var t bool
 	hours := 10 // variables shorthand
@@ -19,7 +19,7 @@ func learning_variables(){
 	// array
 	names := [3]string{"A", "B", "C"}
 	names[0] = "X"
-	names[1] = "Y"	
+	names[1] = "Y"
 	// names[2] = "Z"
 	fmt.Println("names[2] is nil ", names[2] == "")
 	fmt.Println(names)
@@ -50,7 +50,7 @@ func learning_variables(){
 	print_board(boards)
 	boards[4] = "Y"
 	print_board(boards)
-	
+
 	// another example about map
 	settings := map[string]string{}
 	settings["rows_per_page"] = "1"
@@ -62,10 +62,12 @@ func learning_variables(){
 	colors := map[string]string{}
 	colors["default"] = "\033[0m"
 	colors["green"] = "\033[32m"
-	colors["blue"] = "#0000FF"
+	colors["blue"] = "\033[34m"
 	colors["red"] = "\033[31m"
 	colors["yellow"] = "\033[33m"
 	fmt.Println(colors["red"], "test[red]")
+	fmt.Println(colors["green"], "test[green]")
+	fmt.Println(colors["blue"], "test[blue]")
+	fmt.Println(colors["yellow"], "test[yellow]")
 	fmt.Println(colors["default"], "test[defaut]")
 }
-
