@@ -3,9 +3,20 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"strings"
 )
 
 func conditionals_demo() {
+	// daysOfWeek
+	days_of_week := map[int]string{
+		0: "Monday",
+		1: "Tuesday",
+		2: "Wednesday",
+		3: "Thursday",
+		4: "Friday",
+		5: "Saturday",
+		6: "Sunday",
+	}
 	// random
 	fmt.Println("Conditional Demo")
 	// random an integer number less than 100
@@ -32,16 +43,6 @@ func conditionals_demo() {
 		fmt.Println("Good luck and try next time!")
 	}
 	if win_prize > 0 {
-		// daysOfWeek
-		days_of_week := map[int]string{
-			0: "Monday",
-			1: "Tuesday",
-			2: "Wednesday",
-			3: "Thursday",
-			4: "Friday",
-			5: "Saturday",
-			6: "Sunday",
-		}
 
 		switch random_day_of_week := days_of_week[rand.Intn(len(days_of_week))]; random_day_of_week {
 		case "Saturday":
@@ -58,5 +59,10 @@ func conditionals_demo() {
 	for lucky_number := rand.Intn(11); lucky_number < 10; draw_times += 1 {
 		lucky_number = rand.Intn(11)
 		fmt.Println(draw_times, " ", lucky_number)
+	}
+	fmt.Println(strings.Repeat("-", 50))
+
+	for index, day_of_week := range days_of_week {
+		fmt.Printf("%d. %s\n", index+1, day_of_week)
 	}
 }

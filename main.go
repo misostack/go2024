@@ -31,4 +31,5 @@ func main() {
 	fmt.Println("Equivalent: 2 = 2.0", 2 == 2.0)
 	learning_variables()
 	conditionals_demo()
+	defer_demo()
 }
