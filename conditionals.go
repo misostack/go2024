@@ -45,12 +45,18 @@ func conditionals_demo() {
 
 		switch random_day_of_week := days_of_week[rand.Intn(len(days_of_week))]; random_day_of_week {
 		case "Saturday":
-			fmt.Printf("The prize will be double, final prize is : %d", win_prize*2)
+			fmt.Printf("The prize will be double, final prize is : %d\n", win_prize*2)
 		case "Sunday":
-			fmt.Printf("The prize will be tripple, final prize is : %d", win_prize*3)
+			fmt.Printf("The prize will be tripple, final prize is : %d\n", win_prize*3)
 		default:
-			fmt.Printf("The prize will be sent on %s", random_day_of_week)
+			fmt.Printf("The prize will be sent on %s\n", random_day_of_week)
 		}
+	}
 
+	// loop
+	draw_times := 1
+	for lucky_number := rand.Intn(11); lucky_number < 10; draw_times += 1 {
+		lucky_number = rand.Intn(11)
+		fmt.Println(draw_times, " ", lucky_number)
 	}
 }
