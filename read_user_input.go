@@ -26,9 +26,17 @@ func read_user_input_demo() {
 	flat_file_name = trim_text(flat_file_name)
 	file_path := fmt.Sprintf("%s/%s", path.Base(""), flat_file_name)
 	fmt.Printf("Writing \"%s\" to %s", flat_phrase, file_path)
-	err := os.WriteFile(flat_file_name, []byte(flat_phrase), 0600)
+	f, err := os.OpenFile(file_path, os.O_RDWR|os.O_CREATE, 0644)
+	if err != nil {
+		fmt.Printf("Can not open file: %s", file_path)
+		os.Exit(1)
+	}
+	// close file after all
+	defer f.Close()
+	_, err = f.Write([]byte(flat_phrase))
 	if err != nil {
 		fmt.Printf("Write file error: %s", err)
+		os.Exit(1)
 	}
 
 }
