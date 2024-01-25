@@ -32,4 +32,5 @@ func main() {
 	learning_variables()
 	conditionals_demo()
 	defer_demo()
+	read_user_input_demo()
 }
